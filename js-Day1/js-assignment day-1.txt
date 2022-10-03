@@ -1,0 +1,213 @@
+                                                                          Assignment-1
+
+
+1.Write JS code to display all the prime numbers between 5 and 50. Log the output to the browser console. 
+
+
+let i;
+let divider,flag;
+for( i=5; i<=50 ; i++)
+{
+    for(divider=2;divider<i;divider++)
+    {
+
+    
+    if(i%divider==0)
+    {
+        flag==1;
+        break;
+    }
+    else{
+        flag=0;
+        console.log("prime number are:" + i);
+        break;
+
+    }
+
+
+
+    }
+
+}
+-------------------------------------------------------------
+
+
+2.Write JS code to reverse the digits of a number. Store the number in a variable.
+
+let reverse=0,rem;
+number = window.prompt('enter a multi digit number')
+while(number!==0)
+{
+    rem = number % 10;
+    reverse = (reverse * 10) + rem;
+    number = parseInt(number / 10);
+    
+}
+console.log("reverse = " + reverse);
+
+------------------------------------------
+
+3.Write JS code to reverse a string. Store the string in a variable.
+
+function reverseString(str){
+    let newString="";
+    for(let i=str.length-1;i>=0;i--){
+        newString+=str[i];
+    }
+    return newString;
+}
+let String ='sowjanya';
+let result=reverseString(String);
+document.write("reverse string is:"+result);
+
+--------------------------------------------------
+
+4.Write JS code to create an array of 10 numbers. Find the first two maximum numbers in the array 
+
+
+var array=[6,5,78,10,15,8,9,11,23,45];
+var first=0;
+var second=0;
+for(var i=0;i<array.length;i++){
+    var current=array[i];
+    if(first<current){
+        second=first;
+        first=current;
+
+    }
+    else if(second<current){
+        second=current;
+
+    }
+
+}
+document.write("array:"+array,"</br>");
+document.write("first greatest number is :"+first,"</br>");
+document.write("second greatest number is :"+second,"</br>");
+
+-----------------------------------------------------
+
+5.Write JS code to sort the array created in assignment 4 in a reverse order.
+
+let s = [6,5,78,10,15,8,9,11,23,45];
+for (let i=0;i<s.length;i++)
+{
+    for(let j=i+1;j<s.length;j++)
+    {
+        let temp = 0;
+        if(s[i]<=s[j])
+        {
+            temp=s[i];
+            s[i]=s[j];
+            s[j]=temp;
+        }
+    }
+}
+document.write(s);
+-------------------------------------------------------
+
+6.Write JS code to find the sum of all even numbers in an array of 10 numbers. In case there are no even numbers, 
+log a message to the browser console saying No even numbers found. 
+
+s = [2,36,5,43,34,57,62,23,25]
+function sumEven(arr){
+    result=0;
+    for(let i=0;i<arr.length;i++)
+    {
+        if(arr[i]%2==0)
+        {
+            result=result+arr[i];
+        }
+    }
+    if(result == 0)
+    {
+        console.log("No even numbers found");
+    }
+        return result
+}
+console.log(sumEven(s));
+
+--------------------------------------------------
+
+7.Write JS code to find the factorial of each number inside an array of 5 elements.
+  The factorial of each number must then be stored in another array of the same size. Print the result array on the console. 
+
+ function factorial(n){
+    let answer = 1;
+    if (n == 0 || n == 1){
+      return answer;
+    }else{
+      for(var i = n; i >= 1; i--){
+        answer = answer * i;
+      }
+      return answer;
+    }  
+  }
+  let initialNumber=[];
+  let finalNumber=[];
+  for (let index = 0; index < 5; index++) {
+    initialNumber[index] = prompt('enter the numbers')
+    console.log('numbers before factorial are : ' + initialNumber )
+  }
+
+------------------------------------------------------
+
+  8.Write JS code to find the number of vowels in the string CITIUSTECH. If the vowel is repeated, it must be counted as 1. 
+
+
+let word =  String(prompt('enter a word'))
+let capWord = word.toUpperCase();
+let vowels = ["A","E","I","O","U"];
+let counter=0;
+let partition = capWord.split("");
+
+for(let i=0; i< capWord.length; i++){
+    for (let j=0; j<vowels.length; j++){
+        if(capWord[i]== vowels[j]){
+             counter++;
+        
+            }
+
+    }
+}
+
+console.log("vowels present in " + word + " are: " + counter);
+
+-----------------------------------------------------------------
+
+9.Write JS code to create an array of 5 strings. Convert the last character of each string to uppercase and store the output in the same array. 
+Print the final array. 
+
+names = ['sai','ambi','prasanna','sowjanya','sandhya'];
+function array(arr1)
+{
+    for(let i=0;i<arr1.length;i++)
+    {
+        arr1[i]=arr1[i].slice(0,arr1[i].length-1) + arr1[i].slice(arr1[i].length-1).toUpperCase();
+    }
+    document.write(arr1);
+}
+array(names);
+
+-------------------------------------------------------
+
+10.Write JS code to determine how many digits are repeated in the number 7312140905.
+
+function countRepeatingDigit(N){
+    var result=0;
+    var cnt=Array(10).fill(0);
+    while(N>0){
+        var rem=N%10;
+        cnt[rem]++;
+        N=Math.floor(N/10);
+    }
+    for(var i=0;i<10;i++){
+        if(cnt[i]>1){
+            result++
+        }
+    }
+    return result;
+
+}
+var N=7312140905;
+document.write(countRepeatingDigit(N)); 
