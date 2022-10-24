@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> DOM example</title>
+</head>
+<body>
+    <h1>setInterval() example</h1>
+    <p id='p1'>Here Time will be displayed</p>
+    <script>
+    setInterval(showTime, 1000);
+
+    function showTime(){
+        let date = new Date();
+        document.getElementById('p1').innerHTML = date.toLocaleTimeString();
+    }
+    </script>
+    </body>
+    </html>
+    
